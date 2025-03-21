@@ -42,7 +42,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         statusBar = new javax.swing.JPanel();
         lblThongtin = new javax.swing.JLabel();
         lblDongHo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         mni = new javax.swing.JMenu();
         mniDangXuat = new javax.swing.JMenuItem();
@@ -73,16 +73,21 @@ public class AdminJFrame extends javax.swing.JFrame {
         toolBar.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\log out.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\log out.png")); // NOI18N
         jButton1.setText("Đăng xuất");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         toolBar.add(jButton1);
         toolBar.add(jSeparator3);
 
         jButton2.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\train.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\train.png")); // NOI18N
         jButton2.setText("Tàu");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -91,7 +96,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         toolBar.add(jButton2);
 
         jButton5.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\trip-train.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\trip-train.png")); // NOI18N
         jButton5.setText("Chuyến đi");
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -99,7 +104,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         toolBar.add(jButton5);
 
         jButton3.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
         jButton3.setText("Khách hàng");
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -107,7 +112,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         toolBar.add(jButton3);
 
         jButton4.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\train-ticket.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\train-ticket.png")); // NOI18N
         jButton4.setText("   Vé tàu   ");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -116,7 +121,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         toolBar.add(jSeparator1);
 
         jButton6.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\schedule.png")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\schedule.png")); // NOI18N
         jButton6.setText("Xem lịch trình");
         jButton6.setFocusable(false);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -124,7 +129,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         toolBar.add(jButton6);
 
         jButton9.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
-        jButton9.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\search-location.png")); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\search-location.png")); // NOI18N
         jButton9.setText("Tìm chuyến tàu");
         jButton9.setFocusable(false);
         jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -138,7 +143,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         toolBar.add(jSeparator2);
 
         jButton7.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Globe.png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Globe.png")); // NOI18N
         jButton7.setText("Hướng dẫn");
         jButton7.setFocusable(false);
         jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -148,7 +153,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         statusBar.setBackground(new java.awt.Color(190, 197, 197));
 
         lblThongtin.setFont(new java.awt.Font("Oswald", 0, 12)); // NOI18N
-        lblThongtin.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Info.png")); // NOI18N
+        lblThongtin.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Info.png")); // NOI18N
         lblThongtin.setText("Chương trình quản lý tàu hỏa");
         lblThongtin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -157,7 +162,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         });
 
         lblDongHo.setFont(new java.awt.Font("Oswald", 0, 12)); // NOI18N
-        lblDongHo.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Alarm.png")); // NOI18N
+        lblDongHo.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Alarm.png")); // NOI18N
         lblDongHo.setText("00:00:00 AM");
 
         javax.swing.GroupLayout statusBarLayout = new javax.swing.GroupLayout(statusBar);
@@ -180,25 +185,26 @@ public class AdminJFrame extends javax.swing.JFrame {
                     .addComponent(lblDongHo)))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\anh-tau-hoa.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\anh-tau-hoa.png")); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         mni.setBackground(new java.awt.Color(214, 221, 255));
         mni.setForeground(new java.awt.Color(51, 0, 153));
         mni.setText("Hệ thống");
 
         mniDangXuat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        mniDangXuat.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\log out.png")); // NOI18N
+        mniDangXuat.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\log out.png")); // NOI18N
         mniDangXuat.setText("Đăng xuất");
         mni.add(mniDangXuat);
 
         mniDoiMK.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        mniDoiMK.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Refresh.png")); // NOI18N
+        mniDoiMK.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Refresh.png")); // NOI18N
         mniDoiMK.setText("Đổi mật khẩu");
         mni.add(mniDoiMK);
         mni.add(jSeparator4);
 
         mniKetThuc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        mniKetThuc.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\turn-off.png")); // NOI18N
+        mniKetThuc.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\No.png")); // NOI18N
         mniKetThuc.setText("Kết thúc");
         mni.add(mniKetThuc);
 
@@ -209,28 +215,28 @@ public class AdminJFrame extends javax.swing.JFrame {
         mnQuanLy.setText("Quản lý");
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\train.png")); // NOI18N
+        jMenuItem4.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\train.png")); // NOI18N
         jMenuItem4.setText("Tàu");
         mnQuanLy.add(jMenuItem4);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\trip-train.png")); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\trip-train.png")); // NOI18N
         jMenuItem2.setText("Chuyến đi");
         mnQuanLy.add(jMenuItem2);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
+        jMenuItem5.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
         jMenuItem5.setText("Khách hàng");
         mnQuanLy.add(jMenuItem5);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
-        jMenuItem6.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\train-ticket.png")); // NOI18N
+        jMenuItem6.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\train-ticket.png")); // NOI18N
         jMenuItem6.setText("Vé tàu");
         mnQuanLy.add(jMenuItem6);
         mnQuanLy.add(jSeparator5);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
-        jMenuItem8.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\User group.png")); // NOI18N
+        jMenuItem8.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\User group.png")); // NOI18N
         jMenuItem8.setText("Nhân viên");
         mnQuanLy.add(jMenuItem8);
 
@@ -241,7 +247,7 @@ public class AdminJFrame extends javax.swing.JFrame {
         jMenu1.setText("Thống kê");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Bar chart.png")); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Bar chart.png")); // NOI18N
         jMenuItem1.setText("Thống kê doanh thu");
         jMenu1.add(jMenuItem1);
 
@@ -252,18 +258,18 @@ public class AdminJFrame extends javax.swing.JFrame {
         mnHoTro.setText("Hỗ trợ");
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F9, 0));
-        jMenuItem9.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\customer-service.png")); // NOI18N
+        jMenuItem9.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\customer-service.png")); // NOI18N
         jMenuItem9.setText("Giải đáp câu hỏi");
         mnHoTro.add(jMenuItem9);
         mnHoTro.add(jSeparator6);
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem11.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\letter.png")); // NOI18N
+        jMenuItem11.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Globe.png")); // NOI18N
         jMenuItem11.setText("Giới thiệu");
         mnHoTro.add(jMenuItem11);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_0, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem10.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Globe.png")); // NOI18N
+        jMenuItem10.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\letter.png")); // NOI18N
         jMenuItem10.setText("Hướng dẫn sử dụng");
         mnHoTro.add(jMenuItem10);
 
@@ -277,17 +283,14 @@ public class AdminJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(statusBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(toolBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(toolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                .addComponent(toolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(statusBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -304,6 +307,10 @@ public class AdminJFrame extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,7 +356,7 @@ public class AdminJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;

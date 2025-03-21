@@ -59,8 +59,13 @@ public class DatVeJDialog extends javax.swing.JDialog {
 
         jButton1.setFont(new java.awt.Font("Oswald", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 153, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\cash.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\cash.png")); // NOI18N
         jButton1.setText("Đặt vé");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Oswald SemiBold", 0, 15)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 153, 0));
@@ -78,7 +83,7 @@ public class DatVeJDialog extends javax.swing.JDialog {
 
         jButton2.setFont(new java.awt.Font("Oswald", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(153, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\turn-left.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\turn-left.png")); // NOI18N
         jButton2.setText("Quay lại");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Thông tin vé", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Oswald Medium", 0, 14))); // NOI18N
@@ -269,6 +274,10 @@ public class DatVeJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

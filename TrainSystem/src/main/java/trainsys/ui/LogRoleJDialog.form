@@ -29,7 +29,7 @@
               <Component id="btnNV" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnKH" min="-2" pref="144" max="-2" attributes="0"/>
-              <EmptySpace pref="7" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -57,7 +57,7 @@
     <Component class="javax.swing.JButton" name="btnNV">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\TrainSys\src\main\java\trainsys\icon\User group.png"/>
+          <Image iconType="2" name="D:\DuAnTotNghiep\TrainSystem\src\main\java\trainsys\icon\User group.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="B&#x1ed9; ph&#x1ead;n qu&#x1ea3;n l&#xfd;"/>
       </Properties>
@@ -65,7 +65,7 @@
     <Component class="javax.swing.JButton" name="btnKH">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\TrainSys\src\main\java\trainsys\icon\cake.png"/>
+          <Image iconType="2" name="D:\DuAnTotNghiep\TrainSystem\src\main\java\trainsys\icon\cake.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Kh&#xe1;ch h&#xe0;ng"/>
       </Properties>

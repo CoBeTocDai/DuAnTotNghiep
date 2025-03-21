@@ -62,10 +62,10 @@ public class QLChuyenDiJDialog extends javax.swing.JDialog {
         ));
         jScrollPane4.setViewportView(jTable2);
 
-        btnXoa.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Delete.png")); // NOI18N
+        btnXoa.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Delete.png")); // NOI18N
         btnXoa.setText("Xóa chuyến tàu");
 
-        btnCapNhat.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Edit.png")); // NOI18N
+        btnCapNhat.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Edit.png")); // NOI18N
         btnCapNhat.setText("Cập nhật chuyến tàu");
 
         javax.swing.GroupLayout tab1Layout = new javax.swing.GroupLayout(tab1);
@@ -87,7 +87,7 @@ public class QLChuyenDiJDialog extends javax.swing.JDialog {
             tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnXoa)
@@ -142,7 +142,7 @@ public class QLChuyenDiJDialog extends javax.swing.JDialog {
         });
         jScrollPane3.setViewportView(jTable1);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\Add.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\Add.png")); // NOI18N
         jButton1.setText("Thêm vào chuyến đi");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -35,10 +35,10 @@ public class LogRoleJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Chọn vai trò");
 
-        btnNV.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\User group.png")); // NOI18N
+        btnNV.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\User group.png")); // NOI18N
         btnNV.setText("Bộ phận quản lý");
 
-        btnKH.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
+        btnKH.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
         btnKH.setText("Khách hàng");
 
         jLabel1.setFont(new java.awt.Font("Oswald SemiBold", 1, 18)); // NOI18N
@@ -54,7 +54,7 @@ public class LogRoleJDialog extends javax.swing.JDialog {
                 .addComponent(btnNV)
                 .addGap(18, 18, 18)
                 .addComponent(btnKH, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)

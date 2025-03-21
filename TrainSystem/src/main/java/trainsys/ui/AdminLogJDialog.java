@@ -49,16 +49,15 @@ public class AdminLogJDialog extends javax.swing.JDialog {
 
         btnDangNhap.setFont(new java.awt.Font("Oswald Medium", 0, 14)); // NOI18N
         btnDangNhap.setForeground(new java.awt.Color(102, 0, 204));
-        btnDangNhap.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\log-in.png")); // NOI18N
+        btnDangNhap.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\log-in.png")); // NOI18N
         btnDangNhap.setText("Đăng nhập");
 
         btnKetThuc.setFont(new java.awt.Font("Oswald Medium", 0, 14)); // NOI18N
         btnKetThuc.setForeground(new java.awt.Color(102, 0, 204));
-        btnKetThuc.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\back.png")); // NOI18N
+        btnKetThuc.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\back.png")); // NOI18N
         btnKetThuc.setText("Quay lại");
 
-        lblAnh.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\loginPage.png")); // NOI18N
-        lblAnh.setText("ảnh");
+        lblAnh.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\loginPage.png")); // NOI18N
         lblAnh.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -80,7 +79,7 @@ public class AdminLogJDialog extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnDangNhap)
                                 .addGap(11, 11, 11)
-                                .addComponent(btnKetThuc, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
+                                .addComponent(btnKetThuc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(txtMaNV, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtMatKhau))
                         .addGap(27, 27, 27))))

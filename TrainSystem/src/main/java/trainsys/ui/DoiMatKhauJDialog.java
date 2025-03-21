@@ -65,7 +65,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         jButton1.setFont(new java.awt.Font("Oswald Medium", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 0, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\close.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\close.png")); // NOI18N
         jButton1.setText("Hủy bỏ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +75,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         jButton2.setFont(new java.awt.Font("Oswald Medium", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 0, 204));
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\arrows.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("D:\\DuAnTotNghiep\\TrainSystem\\src\\main\\java\\trainsys\\icon\\arrows.png")); // NOI18N
         jButton2.setText("Đổi mật khẩu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
