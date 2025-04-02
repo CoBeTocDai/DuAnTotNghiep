@@ -13,7 +13,7 @@ public class NhanVien {
     private String maNV;
     private String matKhau;
     private String hoTen;
-    private boolean vaiTro = false;
+    private boolean vaiTro = true;
 
     @Override
     public String toString() {

@@ -31,25 +31,25 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
         tabs = new javax.swing.JTabbedPane();
         tab1 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblChuyenDi = new javax.swing.JTable();
         btnXoa = new javax.swing.JButton();
         btnCapNhat = new javax.swing.JButton();
         tab2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         txtTimKiem = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tblTau = new javax.swing.JTable();
+        btnThem = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        cboGaDen = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
         cboGaDi = new javax.swing.JComboBox<>();
+        jPanel2 = new javax.swing.JPanel();
+        cboGaDen = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("QUẢN LÝ CHUYẾN ĐI");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblChuyenDi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -60,7 +60,7 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
                 "Mã chuyến đi", "Mã tàu", "Ga đi", "Ga đến", "Giờ đi", "Giờ đến", "Ngày đi"
             }
         ));
-        jScrollPane4.setViewportView(jTable2);
+        jScrollPane4.setViewportView(tblChuyenDi);
 
         btnXoa.setText("Xóa chuyến tàu");
 
@@ -119,7 +119,7 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblTau.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -138,12 +138,12 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tblTau);
 
-        jButton1.setText("Thêm vào chuyến đi");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnThem.setText("Thêm vào chuyến đi");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnThemActionPerformed(evt);
             }
         });
 
@@ -157,7 +157,7 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
                     .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane3))
-                    .addComponent(jButton1))
+                    .addComponent(btnThem))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tab2Layout.setVerticalGroup(
@@ -168,7 +168,7 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnThem)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -180,9 +180,9 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Ga đi", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Oswald ExtraLight", 1, 14))); // NOI18N
 
-        cboGaDen.addActionListener(new java.awt.event.ActionListener() {
+        cboGaDi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboGaDenActionPerformed(evt);
+                cboGaDiActionPerformed(evt);
             }
         });
 
@@ -192,19 +192,19 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cboGaDen, 0, 236, Short.MAX_VALUE)
+                .addComponent(cboGaDi, 0, 236, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cboGaDen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(cboGaDi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Ga đến", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Oswald ExtraLight", 1, 14))); // NOI18N
 
-        cboGaDi.addActionListener(new java.awt.event.ActionListener() {
+        cboGaDen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboGaDiActionPerformed(evt);
+                cboGaDenActionPerformed(evt);
             }
         });
 
@@ -214,12 +214,12 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cboGaDi, 0, 236, Short.MAX_VALUE)
+                .addComponent(cboGaDen, 0, 236, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cboGaDi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(cboGaDen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -261,17 +261,17 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
         
     }//GEN-LAST:event_txtTimKiemActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void cboGaDenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboGaDenActionPerformed
-        
-    }//GEN-LAST:event_cboGaDenActionPerformed
+    }//GEN-LAST:event_btnThemActionPerformed
 
     private void cboGaDiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboGaDiActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cboGaDiActionPerformed
+
+    private void cboGaDenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboGaDenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboGaDenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,21 +324,21 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCapNhat;
+    private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;
     private javax.swing.JComboBox<String> cboGaDen;
     private javax.swing.JComboBox<String> cboGaDi;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JPanel tab1;
     private javax.swing.JPanel tab2;
     private javax.swing.JTabbedPane tabs;
+    private javax.swing.JTable tblChuyenDi;
+    private javax.swing.JTable tblTau;
     private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,12 +4,17 @@
  */
 package trainsys.ui;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import trainsys.dao.VeDAO;
+import trainsys.entity.Ve;
+
 /**
  *
  * @author ADMIN
  */
 public class VeJDialog extends javax.swing.JDialog {
-
+    private VeDAO veDAO = new VeDAO();
     /**
      * Creates new form VeJDialog
      */
@@ -17,7 +22,55 @@ public class VeJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         init();
+        loadTable();
+        loadComboBox();
     }
+    // Load dữ liệu từ SQL lên bảng
+    private void loadTable() {
+        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
+        model.setRowCount(0);
+        List<Ve> list = veDAO.getAllVeTau();
+        for (Ve ve : list) {
+            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
+        }
+    }
+    
+    // Tìm kiếm theo MaChuyenDi
+    private void search() {
+        String keyword = txtSearch.getText().trim();
+        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
+        model.setRowCount(0);
+        List<Ve> list = veDAO.searchVeTau(keyword);
+        for (Ve ve : list) {
+            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
+        }
+    }
+    
+    // Lọc dữ liệu theo MaTau từ ComboBox
+    private void filterByMaTau() {
+        String selectedMaTau = (String) cboMaTau.getSelectedItem();
+        if (selectedMaTau == null || selectedMaTau.equals("Tất cả")) {
+            loadTable();
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
+        model.setRowCount(0);
+        List<Ve> list = veDAO.filterByMaTau(selectedMaTau);
+        for (Ve ve : list) {
+            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
+        }
+    }
+    
+    // Load danh sách mã tàu vào ComboBox
+    private void loadComboBox() {
+        List<String> maTauList = veDAO.getAllMaTau();
+        cboMaTau.removeAllItems();
+        cboMaTau.addItem("Tất cả");
+        for (String maTau : maTauList) {
+            cboMaTau.addItem(maTau);
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,10 +85,10 @@ public class VeJDialog extends javax.swing.JDialog {
         tabs = new javax.swing.JTabbedPane();
         tab2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField8 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        tblVeTau = new javax.swing.JTable();
+        txtSearch = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
+        cboMaTau = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("QUẢN LÝ VÉ");
@@ -44,7 +97,7 @@ public class VeJDialog extends javax.swing.JDialog {
         jLabel1.setForeground(new java.awt.Color(51, 0, 204));
         jLabel1.setText("QUẢN LÝ VÉ");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblVeTau.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -70,17 +123,27 @@ public class VeJDialog extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblVeTau);
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                txtSearchActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Tìm");
+        btnSearch.setText("Tìm");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SE01", "SE02", "SE03", "SE04" }));
+        cboMaTau.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SE01", "SE02", "SE03", "SE04" }));
+        cboMaTau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboMaTauActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tab2Layout = new javax.swing.GroupLayout(tab2);
         tab2.setLayout(tab2Layout);
@@ -89,12 +152,13 @@ public class VeJDialog extends javax.swing.JDialog {
             .addGroup(tab2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
                     .addGroup(tab2Layout.createSequentialGroup()
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cboMaTau, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         tab2Layout.setVerticalGroup(
@@ -102,10 +166,10 @@ public class VeJDialog extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cboMaTau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -139,9 +203,20 @@ public class VeJDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+        search();
+    }//GEN-LAST:event_txtSearchActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        search();
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void cboMaTauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMaTauActionPerformed
+        // TODO add your handling code here:
+        filterByMaTau();
+    }//GEN-LAST:event_cboMaTauActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,18 +264,20 @@ public class VeJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JComboBox<String> cboMaTau;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JPanel tab2;
     private javax.swing.JTabbedPane tabs;
+    private javax.swing.JTable tblVeTau;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 
     private  void init() {
         setLocationRelativeTo(null);
+        loadTable();
+         loadComboBox();
     }
 
 

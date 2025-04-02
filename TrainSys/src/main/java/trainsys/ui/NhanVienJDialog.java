@@ -446,7 +446,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
                     nv.getMaNV(),
                     nv.getMatKhau(),
                     nv.getHoTen(),
-                    nv.isVaiTro() ? "Quản lý" : "Nhân viên"
+                    nv.isVaiTro() ? "Quản lý" : "Nhân viên",
                 };
                 model.addRow(row);
             }
@@ -528,8 +528,11 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         txtHoTen.setText(nv.getHoTen());
         txtMatKhau.setText(nv.getMatKhau());
         txtMatKhau2.setText(nv.getMatKhau());
-        rdoQuanLy.setSelected(!nv.isVaiTro());
-        rdoNhanVien.setSelected(!nv.isVaiTro());
+        if (nv.isVaiTro()) {
+            rdoQuanLy.setSelected(true);
+        } else {
+            rdoNhanVien.setSelected(true);
+        }
     }
 
     NhanVien getForm() {
@@ -538,7 +541,6 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         nv.setHoTen(txtHoTen.getText());
         nv.setMatKhau(new String(txtMatKhau.getPassword()));
         nv.setVaiTro(rdoQuanLy.isSelected());
-        nv.setVaiTro(rdoNhanVien.isSelected());
         return nv;
     }
 
