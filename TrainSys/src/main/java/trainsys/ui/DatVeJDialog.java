@@ -86,12 +86,8 @@ public class DatVeJDialog extends javax.swing.JDialog {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Thông tin vé", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Oswald Medium", 0, 14))); // NOI18N
 
-        jTextField8.setEditable(false);
-
         jLabel13.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         jLabel13.setText("Loại vé");
-
-        jTextField9.setEditable(false);
 
         jLabel14.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         jLabel14.setText("Giá vé");
@@ -108,23 +104,11 @@ public class DatVeJDialog extends javax.swing.JDialog {
         jLabel5.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         jLabel5.setText("Toa ");
 
-        jTextField10.setEditable(false);
-
         jLabel7.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         jLabel7.setText("Giờ đi");
 
         jLabel9.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         jLabel9.setText("Số ghế");
-
-        jTextField1.setEditable(false);
-
-        jTextField2.setEditable(false);
-
-        jTextField3.setEditable(false);
-
-        jTextField4.setEditable(false);
-
-        jTextField5.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -32,6 +32,7 @@ public class GioiThieuJDialog extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Giới thiệu");
 
         jTextPane1.setText("1. Tổng Quan Về Ứng Dụng:\n\nỨng dụng Quản Lý Hệ Thống Tàu Hỏa (TrainSys) là một phần mềm hỗ trợ quản lý và vận hành hệ thống đặt vé tàu hỏa. Phần mềm được thiết kế nhằm tối ưu hóa quy trình đặt vé, quản lý chuyến tàu, khách hàng và nhân viên, giúp tăng hiệu suất làm việc và nâng cao trải nghiệm người dùng.\n\n\n2. Mục Tiêu Phát Triển:\n\nTrainSys được xây dựng với mục tiêu cung cấp một nền tảng quản lý hiệu quả, dễ sử dụng và có khả năng mở rộng trong tương lai. Phiên bản hiện tại tập trung vào các tính năng cốt lõi, và có thể được nâng cấp với các chức năng bổ sung như tích hợp thanh toán trực tuyến, thông báo qua email/SMS, và cải thiện giao diện người dùng.");
         jTextPane1.setToolTipText("");
@@ -45,20 +46,16 @@ public class GioiThieuJDialog extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 

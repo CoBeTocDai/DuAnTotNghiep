@@ -42,7 +42,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         lblAnh = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Đăng nhập nội bộ");
+        setTitle("Đăng nhập tài khoản");
 
         jLabel2.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 0, 204));
@@ -84,16 +84,14 @@ public class DangNhapJDialog extends javax.swing.JDialog {
                 .addComponent(lblAnh)
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(170, 170, 170))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnDangNhap)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnKetThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(170, 170, 170))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(btnDangNhap)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnKetThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(txtMatKhau)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
