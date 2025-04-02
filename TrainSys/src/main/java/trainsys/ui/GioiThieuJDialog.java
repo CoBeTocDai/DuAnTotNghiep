@@ -37,7 +37,7 @@ public class GioiThieuJDialog extends javax.swing.JDialog {
         jTextPane1.setToolTipText("");
         jScrollPane1.setViewportView(jTextPane1);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\TrainSys\\src\\main\\java\\trainsys\\icon\\anh-gioi-thieu.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\anh-gioi-thieu.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -69,6 +69,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         btnHuyBo.setFont(new java.awt.Font("Oswald Medium", 0, 14)); // NOI18N
         btnHuyBo.setForeground(new java.awt.Color(51, 0, 204));
+        btnHuyBo.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\No.png")); // NOI18N
         btnHuyBo.setText("Hủy bỏ");
         btnHuyBo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +79,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         btnDoiMK.setFont(new java.awt.Font("Oswald Medium", 0, 14)); // NOI18N
         btnDoiMK.setForeground(new java.awt.Color(51, 0, 204));
+        btnDoiMK.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Refresh.png")); // NOI18N
         btnDoiMK.setText("Đổi mật khẩu");
         btnDoiMK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

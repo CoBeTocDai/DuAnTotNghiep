@@ -80,6 +80,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         toolBar.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
 
         btnDangXuat.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
+        btnDangXuat.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\log out.png")); // NOI18N
         btnDangXuat.setText("Đăng xuất");
         btnDangXuat.setFocusable(false);
         btnDangXuat.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -93,6 +94,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         toolBar.add(jSeparator3);
 
         btnTau.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
+        btnTau.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\train.png")); // NOI18N
         btnTau.setText("Tàu");
         btnTau.setFocusable(false);
         btnTau.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -106,6 +108,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         toolBar.add(btnTau);
 
         btnChuyenDi.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
+        btnChuyenDi.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\trip-train.png")); // NOI18N
         btnChuyenDi.setText("Chuyến đi");
         btnChuyenDi.setFocusable(false);
         btnChuyenDi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -113,6 +116,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         toolBar.add(btnChuyenDi);
 
         btnKhachHang.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
+        btnKhachHang.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
         btnKhachHang.setText("Khách hàng");
         btnKhachHang.setFocusable(false);
         btnKhachHang.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -125,6 +129,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         toolBar.add(btnKhachHang);
 
         btnVeTau.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
+        btnVeTau.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\train-ticket.png")); // NOI18N
         btnVeTau.setText("   Vé tàu   ");
         btnVeTau.setFocusable(false);
         btnVeTau.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -138,6 +143,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         toolBar.add(jSeparator1);
 
         btnLichTrinh.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
+        btnLichTrinh.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\schedule.png")); // NOI18N
         btnLichTrinh.setText("Xem lịch trình");
         btnLichTrinh.setFocusable(false);
         btnLichTrinh.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -145,6 +151,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         toolBar.add(btnLichTrinh);
 
         btnChuyenTau.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
+        btnChuyenTau.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\search-location.png")); // NOI18N
         btnChuyenTau.setText("Tìm chuyến tàu");
         btnChuyenTau.setFocusable(false);
         btnChuyenTau.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -158,6 +165,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         toolBar.add(jSeparator2);
 
         btnHuongDan.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
+        btnHuongDan.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Globe.png")); // NOI18N
         btnHuongDan.setText("Hướng dẫn");
         btnHuongDan.setFocusable(false);
         btnHuongDan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -167,6 +175,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         statusBar.setBackground(new java.awt.Color(190, 197, 197));
 
         lblThongtin.setFont(new java.awt.Font("Oswald", 0, 12)); // NOI18N
+        lblThongtin.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Info.png")); // NOI18N
         lblThongtin.setText("Chương trình quản lý tàu hỏa");
         lblThongtin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -175,6 +184,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         });
 
         lblDongHo.setFont(new java.awt.Font("Oswald", 0, 12)); // NOI18N
+        lblDongHo.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Alarm.png")); // NOI18N
         lblDongHo.setText("00:00:00 AM");
 
         javax.swing.GroupLayout statusBarLayout = new javax.swing.GroupLayout(statusBar);
@@ -197,6 +207,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
                     .addComponent(lblDongHo)))
         );
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\anh-tau-hoa.png")); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         mnHeThong.setBackground(new java.awt.Color(214, 221, 255));
@@ -204,10 +215,12 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnHeThong.setText("Hệ thống");
 
         mniDangXuat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mniDangXuat.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\log out.png")); // NOI18N
         mniDangXuat.setText("Đăng xuất");
         mnHeThong.add(mniDangXuat);
 
         mniDoiMK.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mniDoiMK.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Refresh.png")); // NOI18N
         mniDoiMK.setText("Đổi mật khẩu");
         mniDoiMK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,6 +231,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnHeThong.add(jSeparator4);
 
         mniKetThuc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mniKetThuc.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\turn-off.png")); // NOI18N
         mniKetThuc.setText("Kết thúc");
         mnHeThong.add(mniKetThuc);
 
@@ -228,6 +242,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.setText("Quản lý");
 
         mnuTau.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        mnuTau.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\train.png")); // NOI18N
         mnuTau.setText("Tàu");
         mnuTau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,6 +252,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.add(mnuTau);
 
         mnuChuyenDi.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        mnuChuyenDi.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\trip-train.png")); // NOI18N
         mnuChuyenDi.setText("Chuyến đi");
         mnuChuyenDi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,6 +262,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.add(mnuChuyenDi);
 
         mnuKhachHang.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
+        mnuKhachHang.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
         mnuKhachHang.setText("Khách hàng");
         mnuKhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,6 +272,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.add(mnuKhachHang);
 
         mnuVeTau.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
+        mnuVeTau.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\train-ticket.png")); // NOI18N
         mnuVeTau.setText("Vé tàu");
         mnuVeTau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,6 +283,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.add(jSeparator5);
 
         mnuNhanVien.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
+        mnuNhanVien.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\User group.png")); // NOI18N
         mnuNhanVien.setText("Nhân viên");
         mnuNhanVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,6 +299,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnThongKe.setText("Thống kê");
 
         mnuDonahThu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
+        mnuDonahThu.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Bar chart.png")); // NOI18N
         mnuDonahThu.setText("Thống kê doanh thu");
         mnThongKe.add(mnuDonahThu);
 
@@ -290,11 +310,13 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnHoTro.setText("Hỗ trợ");
 
         mnuCauHoi.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F9, 0));
+        mnuCauHoi.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\customer-service.png")); // NOI18N
         mnuCauHoi.setText("Giải đáp câu hỏi");
         mnHoTro.add(mnuCauHoi);
         mnHoTro.add(jSeparator6);
 
         mnuGioiThieu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuGioiThieu.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\letter.png")); // NOI18N
         mnuGioiThieu.setText("Giới thiệu");
         mnuGioiThieu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -304,6 +326,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnHoTro.add(mnuGioiThieu);
 
         mnuHuongDan.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_0, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuHuongDan.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Globe.png")); // NOI18N
         mnuHuongDan.setText("Hướng dẫn sử dụng");
         mnHoTro.add(mnuHuongDan);
 

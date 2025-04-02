@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="pgbLoading" max="32767" attributes="0"/>
-          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+          <Component id="jLabel1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -55,7 +55,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\TrainSys\src\main\java\trainsys\icon\nen-tau2.jpg"/>
+          <Image iconType="2" name="D:\PRO230 - UDPM - Java\CodeJava\DuAnTotNghiep\TrainSys\src\main\java\trainsys\icon\nen-tau2.jpg"/>
         </Property>
       </Properties>
     </Component>
