@@ -37,6 +37,7 @@ public class ChaoJDialog extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cửa sổ chào");
 
         pgbLoading.setBackground(new java.awt.Color(204, 204, 204));
         pgbLoading.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

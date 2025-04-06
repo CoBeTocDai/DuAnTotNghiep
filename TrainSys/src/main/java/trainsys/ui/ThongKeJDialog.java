@@ -172,4 +172,12 @@ public class ThongKeJDialog extends javax.swing.JDialog {
     private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane tabs;
     // End of variables declaration//GEN-END:variables
+
+    public void selectTab(int index) {
+        tabs.setSelectedIndex(index);
+    }
+
+
+
+
 }
