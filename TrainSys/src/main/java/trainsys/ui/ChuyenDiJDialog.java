@@ -231,7 +231,6 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
 
         jButton2.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Delete.png")); // NOI18N
         jButton2.setText("Xóa");
-        jButton2.setPreferredSize(new java.awt.Dimension(78, 31));
 
         jButton3.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Edit.png")); // NOI18N
         jButton3.setText("Sửa");
@@ -246,13 +245,13 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã chuyến đi", "Ga đi", "Ga đến", "Ngày đi", "Giờ đi"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -321,7 +320,7 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -349,7 +348,7 @@ public class ChuyenDiJDialog extends javax.swing.JDialog {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã tàu", "Số lượng toa", "Tổng số ghế", "Tình trạng"
             }
         ));
         jScrollPane2.setViewportView(jTable2);

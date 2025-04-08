@@ -153,6 +153,11 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         btnLichTrinh.setFocusable(false);
         btnLichTrinh.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLichTrinh.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnLichTrinh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLichTrinhActionPerformed(evt);
+            }
+        });
         toolBar.add(btnLichTrinh);
 
         btnChuyenTau.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
@@ -396,7 +401,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblThongtinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongtinMouseClicked
-        
+        this.moGioiThieu();
     }//GEN-LAST:event_lblThongtinMouseClicked
 
     private void btnChuyenTauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChuyenTauActionPerformed
@@ -469,6 +474,10 @@ public class TrainSysJFrame extends javax.swing.JFrame {
     private void mniKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKetThucActionPerformed
         this.ketThuc();
     }//GEN-LAST:event_mniKetThucActionPerformed
+
+    private void btnLichTrinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLichTrinhActionPerformed
+        this.openLichTrinh();
+    }//GEN-LAST:event_btnLichTrinhActionPerformed
 
     /**
      * @param args the command line arguments
@@ -631,6 +640,10 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         else{
             MsgBox.alert(this, "Vui lòng đăng nhập!");
         }
+    }
+
+    private void openLichTrinh() {
+        new XemLichTrinhJDialog(this, true).setVisible(true);
     }
     
 }
