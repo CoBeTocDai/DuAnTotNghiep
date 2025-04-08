@@ -14,7 +14,7 @@ import java.sql.*;
  */
 public class TaoTKDAO {
     public void insert(TaoTK tk) {
-        String sql = "INSERT INTO KhachHang (MaKH, TenTaiKhoan, HoTen, SDT, Email, MatKhau) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO TaoTK (MaKH, TenTaiKhoan, HoTen, SDT, Email, MatKhau) VALUES (?, ?, ?, ?, ?, ?)";
         XJdbc.update(sql,
                 tk.getMaKH(),
                 tk.getTenTaiKhoan(),
