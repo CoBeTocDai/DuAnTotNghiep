@@ -85,7 +85,6 @@
                               <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -94,17 +93,9 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="oneWay" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="twoWay" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jSpinner1" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="txtNgayVe" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jSpinner2" alignment="1" min="-2" pref="249" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jSpinner1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="jSpinner2" alignment="1" min="-2" pref="249" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -166,12 +157,7 @@
                       <Component id="txtGioDi" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="oneWay" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="twoWay" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -181,14 +167,9 @@
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jSpinner2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtNgayVe" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -240,14 +221,6 @@
               <Font name="Oswald" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gi&#x1edd; &#x111;i:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Oswald" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ng&#xe0;y v&#x1ec1;:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
@@ -334,44 +307,9 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="oneWay">
-          <Properties>
-            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroup1"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Oswald" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="V&#xe9; m&#x1ed9;t chi&#x1ec1;u"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="oneWayActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="twoWay">
-          <Properties>
-            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroup1"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Oswald" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="V&#xe9; kh&#x1ee9; h&#x1ed3;i"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="twoWayActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JSpinner" name="jSpinner1">
         </Component>
         <Component class="javax.swing.JSpinner" name="jSpinner2">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtNgayVe">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto" size="14" style="0"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>

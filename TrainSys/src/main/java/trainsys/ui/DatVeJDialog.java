@@ -36,7 +36,6 @@ public class DatVeJDialog extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -48,11 +47,8 @@ public class DatVeJDialog extends javax.swing.JDialog {
         txtMaTau = new javax.swing.JTextField();
         txtNgayDi = new javax.swing.JTextField();
         txtGioDi = new javax.swing.JTextField();
-        oneWay = new javax.swing.JRadioButton();
-        twoWay = new javax.swing.JRadioButton();
         jSpinner1 = new javax.swing.JSpinner();
         jSpinner2 = new javax.swing.JSpinner();
-        txtNgayVe = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -78,9 +74,6 @@ public class DatVeJDialog extends javax.swing.JDialog {
 
         jLabel9.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         jLabel9.setText("Giờ đi:");
-
-        jLabel10.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
-        jLabel10.setText("Ngày về:");
 
         jLabel11.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         jLabel11.setText("Mã tàu:");
@@ -108,26 +101,6 @@ public class DatVeJDialog extends javax.swing.JDialog {
         txtNgayDi.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
 
         txtGioDi.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-
-        buttonGroup1.add(oneWay);
-        oneWay.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
-        oneWay.setText("Vé một chiều");
-        oneWay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                oneWayActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(twoWay);
-        twoWay.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
-        twoWay.setText("Vé khứ hồi");
-        twoWay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                twoWayActionPerformed(evt);
-            }
-        });
-
-        txtNgayVe.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setFont(new java.awt.Font("Oswald", 1, 14)); // NOI18N
@@ -165,23 +138,16 @@ public class DatVeJDialog extends javax.swing.JDialog {
                             .addComponent(jLabel6)
                             .addComponent(jLabel9)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel10))
+                            .addComponent(jLabel8))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(txtGioDi, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(oneWay)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(twoWay))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txtNgayVe, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(0, 24, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,11 +191,7 @@ public class DatVeJDialog extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtGioDi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(oneWay)
-                    .addComponent(twoWay))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -237,13 +199,9 @@ public class DatVeJDialog extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtNgayVe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -259,15 +217,6 @@ public class DatVeJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void oneWayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneWayActionPerformed
-        txtNgayVe.setEnabled(false);    // Vô hiệu hóa ngày về
-        txtNgayVe.setText("");          // Xóa dữ liệu ngày về
-    }//GEN-LAST:event_oneWayActionPerformed
-
-    private void twoWayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoWayActionPerformed
-        txtNgayVe.setEnabled(true);     // Kích hoạt ngày về
-    }//GEN-LAST:event_twoWayActionPerformed
 
     /**
      * @param args the command line arguments
@@ -314,7 +263,6 @@ public class DatVeJDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -328,15 +276,12 @@ public class DatVeJDialog extends javax.swing.JDialog {
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JLabel lblDatVeTau;
-    private javax.swing.JRadioButton oneWay;
-    private javax.swing.JRadioButton twoWay;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtGioDi;
     private javax.swing.JTextField txtHoTen;
     private javax.swing.JTextField txtMaCD;
     private javax.swing.JTextField txtMaTau;
     private javax.swing.JTextField txtNgayDi;
-    private javax.swing.JTextField txtNgayVe;
     private javax.swing.JTextField txtSoDT;
     // End of variables declaration//GEN-END:variables
 }
