@@ -4,6 +4,12 @@
  */
 package trainsys.ui;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import trainsys.dao.ChuyenDiDAO;
+import trainsys.entity.ChuyenDi;
+import trainsys.utils.MsgBox;
+import trainsys.utils.XDate;
 /**
  *
  * @author ADMIN
@@ -17,6 +23,7 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        this.init();
     }
 
     @SuppressWarnings("unchecked")
@@ -24,17 +31,17 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cboGaDi = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblChuyenDi = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cboGaDen = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNgayDi = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnTimKiem = new javax.swing.JButton();
+        btnChon = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Danh sách chuyến đi");
@@ -43,13 +50,12 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
         jLabel1.setForeground(new java.awt.Color(102, 0, 153));
         jLabel1.setText("Danh sách chuyến đi");
 
-        jComboBox1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboGaDi.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Oswald Light", 1, 14)); // NOI18N
         jLabel2.setText("Ga đi:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblChuyenDi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -60,26 +66,25 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
                 "Mã chuyến đi", "Mã tàu", "Ga đi", "Ga đến", "Giờ đi", "Ngày"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblChuyenDi);
 
         jLabel3.setFont(new java.awt.Font("Oswald Light", 1, 14)); // NOI18N
         jLabel3.setText("Ga đến:");
 
-        jComboBox2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboGaDen.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        cboGaDen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel4.setFont(new java.awt.Font("Oswald Light", 1, 14)); // NOI18N
         jLabel4.setText("Ngày đi:");
 
-        jTextField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtNgayDi.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Search.png")); // NOI18N
-        jButton1.setText("Tìm kiếm");
+        btnTimKiem.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
+        btnTimKiem.setText("Tìm kiếm");
 
-        jButton2.setFont(new java.awt.Font("Oswald", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 0));
-        jButton2.setText("Chọn chuyến");
+        btnChon.setFont(new java.awt.Font("Oswald", 1, 14)); // NOI18N
+        btnChon.setForeground(new java.awt.Color(0, 153, 0));
+        btnChon.setText("Chọn chuyến");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,7 +97,7 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(jSeparator1)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2)))
+                            .addComponent(btnChon)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel1))
@@ -110,14 +115,14 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
                                 .addGap(18, 18, 18)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboGaDi, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cboGaDen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtNgayDi, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1)))))
+                                .addComponent(btnTimKiem)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -127,23 +132,23 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboGaDi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboGaDen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNgayDi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(btnChon)
                 .addContainerGap())
         );
 
@@ -194,27 +199,45 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton btnChon;
+    private javax.swing.JButton btnTimKiem;
+    private javax.swing.JComboBox<String> cboGaDen;
+    private javax.swing.JComboBox<String> cboGaDi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblChuyenDi;
+    private javax.swing.JTextField txtNgayDi;
     // End of variables declaration//GEN-END:variables
 
-
-
-
-
-
-
-
-
-
+    ChuyenDiDAO dao = new ChuyenDiDAO();
+    int row = -1;
+    
+    void init() {
+        setLocationRelativeTo(null);
+        this.fillTableChuyenDi();
+        this.row = -1;
+    }
+    void fillTableChuyenDi() {
+        DefaultTableModel model = (DefaultTableModel) tblChuyenDi.getModel();
+        model.setRowCount(0);
+        try {
+            List<ChuyenDi> list = dao.selectAll();
+            for (ChuyenDi nh : list) {
+                Object[] row = {
+                    nh.getMaCD(),
+                    nh.getMaTau(),
+                    nh.getGaDi(),
+                    nh.getGaDen(),
+                    nh.getGioDi(),
+                    XDate.toString(nh.getNgayDi(), "MM/dd/yyyy"),};
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
 }
