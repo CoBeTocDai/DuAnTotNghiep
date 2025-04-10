@@ -61,7 +61,7 @@ public class TauJDialog extends javax.swing.JDialog {
         tblTau = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("QUẢN LÝ CHUYẾN TÀU");
+        setTitle("QUẢN LÝ TÀU");
 
         jLabel1.setFont(new java.awt.Font("Oswald SemiBold", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 0, 204));
@@ -133,7 +133,7 @@ public class TauJDialog extends javax.swing.JDialog {
             }
         });
 
-        cboTrangThai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tốt", "Bảo trì", "Ngưng hoạt động" }));
+        cboTrangThai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hoạt động", "Bảo trì", "Ngưng hoạt động" }));
 
         javax.swing.GroupLayout tab1Layout = new javax.swing.GroupLayout(tab1);
         tab1.setLayout(tab1Layout);
@@ -207,9 +207,9 @@ public class TauJDialog extends javax.swing.JDialog {
                     .addGroup(tab1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(28, 28, 28)))
-                .addGap(8, 8, 8)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLast)
                     .addComponent(btnPrev)
@@ -270,11 +270,11 @@ public class TauJDialog extends javax.swing.JDialog {
         );
         tab2Layout.setVerticalGroup(
             tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 384, Short.MAX_VALUE)
+            .addGap(0, 378, Short.MAX_VALUE)
             .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(tab2Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
@@ -299,8 +299,8 @@ public class TauJDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(tabs)
+                .addContainerGap())
         );
 
         pack();
@@ -508,7 +508,7 @@ public class TauJDialog extends javax.swing.JDialog {
     }
 
     void setForm(Tau tau) {
-        txtMaTau.setText(tau.getMaTau());
+        txtMaTau.setText(String.valueOf(tau.getMaTau()));
         txtSoLT.setText(tau.getSoLT());
         txtSoLG.setText(tau.getSoLG());
         cboTrangThai.setSelectedItem(tau.getTrangThai());

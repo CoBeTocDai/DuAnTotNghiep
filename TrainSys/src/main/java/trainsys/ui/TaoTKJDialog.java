@@ -239,19 +239,12 @@ public class TaoTKJDialog extends javax.swing.JDialog {
     
     private void dangKy() {
         String tenTK = txtTenTK.getText().trim();
-        String hoTen = txtHoTen.getText().trim();
-        String sdt = txtSDT.getText().trim();
-        String email = txtEmail.getText().trim();
         String matKhau = new String(txtMatKhau.getPassword());
         String matKhau2 = new String(txtMatKhau2.getPassword());
         
-        if (tenTK.isEmpty() || hoTen.isEmpty() || sdt.isEmpty() || email.isEmpty() || matKhau.isEmpty() || matKhau2.isEmpty()) {
+        if (tenTK.isEmpty() || matKhau.isEmpty() || matKhau2.isEmpty()) {
             MsgBox.alert(this, "Vui lòng nhập đầy đủ thông tin!");
             return;
-        }
-        
-        if (!email.matches("\\w+@\\w+(\\.\\w+){1,2}")){
-            MsgBox.alert(this, "Không đúng dạng email!");
         }
         
         if (!matKhau.equals(matKhau2)) {
@@ -264,13 +257,9 @@ public class TaoTKJDialog extends javax.swing.JDialog {
             return;
         }
         
-        
         TaoTK tk = new TaoTK();
         tk.setMaKH(MaKhachHangGenerator.taoMaKH());
         tk.setTenTaiKhoan(tenTK);
-        tk.setHoTen(hoTen);
-        tk.setSdt(sdt);
-        tk.setEmail(email);
         tk.setMatKhau(matKhau);
         
         try {

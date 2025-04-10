@@ -9,60 +9,33 @@ package trainsys.entity;
  * @author ADMIN
  */
 public class TaoTK {
-    private String maKH;
-    private String tenTaiKhoan;
-    private String hoTen;
-    private String sdt;
-    private String email;
-    private String matKhau;
+    private String MaKH;
+    private String TenTaiKhoan;
+    private String MatKhau;
 
     public String getMaKH() {
-        return maKH;
+        return MaKH;
     }
 
-    public void setMaKH(String maKH) {
-        this.maKH = maKH;
+    public void setMaKH(String MaKH) {
+        this.MaKH = MaKH;
     }
 
     public String getTenTaiKhoan() {
-        return tenTaiKhoan;
+        return TenTaiKhoan;
     }
 
-    public void setTenTaiKhoan(String tenTaiKhoan) {
-        this.tenTaiKhoan = tenTaiKhoan;
-    }
-
-    public String getHoTen() {
-        return hoTen;
-    }
-
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
-    }
-
-    public String getSdt() {
-        return sdt;
-    }
-
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTenTaiKhoan(String TenTaiKhoan) {
+        this.TenTaiKhoan = TenTaiKhoan;
     }
 
     public String getMatKhau() {
-        return matKhau;
+        return MatKhau;
     }
 
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
+    public void setMatKhau(String MatKhau) {
+        this.MatKhau = MatKhau;
     }
-    
-    
+
+
 }

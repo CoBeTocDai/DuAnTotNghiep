@@ -36,6 +36,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Thống Kê");
 
         jLabel1.setFont(new java.awt.Font("Oswald SemiBold", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 0, 204));

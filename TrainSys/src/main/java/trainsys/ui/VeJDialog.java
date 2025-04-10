@@ -21,55 +21,52 @@ public class VeJDialog extends javax.swing.JDialog {
     public VeJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        init();
-        loadTable();
-        loadComboBox();
     }
     // Load dữ liệu từ SQL lên bảng
-    private void loadTable() {
-        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
-        model.setRowCount(0);
-        List<Ve> list = veDAO.getAllVeTau();
-        for (Ve ve : list) {
-            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
-        }
-    }
-    
-    // Tìm kiếm theo MaChuyenDi
-    private void search() {
-        String keyword = txtSearch.getText().trim();
-        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
-        model.setRowCount(0);
-        List<Ve> list = veDAO.searchVeTau(keyword);
-        for (Ve ve : list) {
-            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
-        }
-    }
-    
-    // Lọc dữ liệu theo MaTau từ ComboBox
-    private void filterByMaTau() {
-        String selectedMaTau = (String) cboMaTau.getSelectedItem();
-        if (selectedMaTau == null || selectedMaTau.equals("Tất cả")) {
-            loadTable();
-            return;
-        }
-        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
-        model.setRowCount(0);
-        List<Ve> list = veDAO.filterByMaTau(selectedMaTau);
-        for (Ve ve : list) {
-            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
-        }
-    }
-    
-    // Load danh sách mã tàu vào ComboBox
-    private void loadComboBox() {
-        List<String> maTauList = veDAO.getAllMaTau();
-        cboMaTau.removeAllItems();
-        cboMaTau.addItem("Tất cả");
-        for (String maTau : maTauList) {
-            cboMaTau.addItem(maTau);
-        }
-    }
+//    private void loadTable() {
+//        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
+//        model.setRowCount(0);
+//        List<Ve> list = veDAO.getAllVeTau();
+//        for (Ve ve : list) {
+//            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
+//        }
+//    }
+//    
+//    // Tìm kiếm theo MaChuyenDi
+//    private void search() {
+//        String keyword = txtSearch.getText().trim();
+//        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
+//        model.setRowCount(0);
+//        List<Ve> list = veDAO.searchVeTau(keyword);
+//        for (Ve ve : list) {
+//            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
+//        }
+//    }
+//    
+//    // Lọc dữ liệu theo MaTau từ ComboBox
+//    private void filterByMaTau() {
+//        String selectedMaTau = (String) cboMaTau.getSelectedItem();
+//        if (selectedMaTau == null || selectedMaTau.equals("Tất cả")) {
+//            loadTable();
+//            return;
+//        }
+//        DefaultTableModel model = (DefaultTableModel) tblVeTau.getModel();
+//        model.setRowCount(0);
+//        List<Ve> list = veDAO.filterByMaTau(selectedMaTau);
+//        for (Ve ve : list) {
+//            model.addRow(new Object[]{ve.getMaVe(), ve.getMaChuyenDi(), ve.getSoToa(), ve.getSoGhe(), ve.getMaKH()});
+//        }
+//    }
+//    
+//    // Load danh sách mã tàu vào ComboBox
+//    private void loadComboBox() {
+//        List<String> maTauList = veDAO.getAllMaTau();
+//        cboMaTau.removeAllItems();
+//        cboMaTau.addItem("Tất cả");
+//        for (String maTau : maTauList) {
+//            cboMaTau.addItem(maTau);
+//        }
+//    }
     
 
     @SuppressWarnings("unchecked")
@@ -90,25 +87,32 @@ public class VeJDialog extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Oswald SemiBold", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 0, 204));
-        jLabel1.setText("QUẢN LÝ VÉ");
+        jLabel1.setText("Quản lý vé");
 
         tblVeTau.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Mã vé", "Mã chuyến đi", "Ngày đi", "Giờ đi", "Tên KH", "SĐT", "Email"
+                "Mã vé", "Mã chuyến đi", "Số toa", "Số ghế", "Mã KH"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(tblVeTau);
@@ -119,7 +123,6 @@ public class VeJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnSearch.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Search.png")); // NOI18N
         btnSearch.setText("Tìm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,17 +196,17 @@ public class VeJDialog extends javax.swing.JDialog {
 
     private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
         // TODO add your handling code here:
-        search();
+        //search();
     }//GEN-LAST:event_txtSearchActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        search();
+        //search();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void cboMaTauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMaTauActionPerformed
         // TODO add your handling code here:
-        filterByMaTau();
+        //filterByMaTau();
     }//GEN-LAST:event_cboMaTauActionPerformed
 
     /**
@@ -261,12 +264,5 @@ public class VeJDialog extends javax.swing.JDialog {
     private javax.swing.JTable tblVeTau;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
-
-    private  void init() {
-        setLocationRelativeTo(null);
-        loadTable();
-        loadComboBox();
-    }
-
 
 }

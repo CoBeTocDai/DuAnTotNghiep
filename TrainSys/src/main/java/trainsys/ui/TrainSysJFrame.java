@@ -55,6 +55,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnHeThong = new javax.swing.JMenu();
         mniDangXuat = new javax.swing.JMenuItem();
         mniDoiMK = new javax.swing.JMenuItem();
+        mniTaoTK = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         mniKetThuc = new javax.swing.JMenuItem();
         mnQuanLy = new javax.swing.JMenu();
@@ -116,6 +117,11 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         btnChuyenDi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnChuyenDi.setPreferredSize(new java.awt.Dimension(78, 55));
         btnChuyenDi.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnChuyenDi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChuyenDiActionPerformed(evt);
+            }
+        });
         toolBar.add(btnChuyenDi);
 
         btnKhachHang.setFont(new java.awt.Font("Oswald SemiBold", 0, 12)); // NOI18N
@@ -187,7 +193,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         statusBar.setBackground(new java.awt.Color(190, 197, 197));
 
         lblThongtin.setFont(new java.awt.Font("Oswald", 0, 12)); // NOI18N
-        lblThongtin.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Info.png")); // NOI18N
         lblThongtin.setText("Chương trình quản lý tàu hỏa");
         lblThongtin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -196,7 +201,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         });
 
         lblDongHo.setFont(new java.awt.Font("Oswald", 0, 12)); // NOI18N
-        lblDongHo.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Alarm.png")); // NOI18N
         lblDongHo.setText("00:00:00 AM");
 
         javax.swing.GroupLayout statusBarLayout = new javax.swing.GroupLayout(statusBar);
@@ -228,14 +232,14 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(103, 103, 103)
                 .addComponent(anhNen)
-                .addGap(96, 96, 96))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(anhNen, javax.swing.GroupLayout.PREFERRED_SIZE, 466, Short.MAX_VALUE)
+            .addComponent(anhNen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         mnHeThong.setBackground(new java.awt.Color(214, 221, 255));
@@ -261,10 +265,18 @@ public class TrainSysJFrame extends javax.swing.JFrame {
             }
         });
         mnHeThong.add(mniDoiMK);
+
+        mniTaoTK.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mniTaoTK.setText("Tạo  tài khoản");
+        mniTaoTK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniTaoTKActionPerformed(evt);
+            }
+        });
+        mnHeThong.add(mniTaoTK);
         mnHeThong.add(jSeparator4);
 
         mniKetThuc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        mniKetThuc.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\turn-off.png")); // NOI18N
         mniKetThuc.setText("Kết thúc");
         mniKetThuc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,7 +292,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.setText("Quản lý");
 
         mnuTau.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        mnuTau.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\train.png")); // NOI18N
         mnuTau.setText("Tàu");
         mnuTau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,7 +301,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.add(mnuTau);
 
         mnuChuyenDi.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
-        mnuChuyenDi.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\trip-train.png")); // NOI18N
         mnuChuyenDi.setText("Chuyến đi");
         mnuChuyenDi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,7 +310,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.add(mnuChuyenDi);
 
         mnuKhachHang.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
-        mnuKhachHang.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\cake.png")); // NOI18N
         mnuKhachHang.setText("Khách hàng");
         mnuKhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,7 +319,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.add(mnuKhachHang);
 
         mnuVeTau.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
-        mnuVeTau.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\train-ticket.png")); // NOI18N
         mnuVeTau.setText("Vé tàu");
         mnuVeTau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,7 +329,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnQuanLy.add(jSeparator5);
 
         mnuNhanVien.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
-        mnuNhanVien.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\User group.png")); // NOI18N
         mnuNhanVien.setText("Nhân viên");
         mnuNhanVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -337,7 +344,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnThongKe.setText("Thống kê");
 
         mnuDonahThu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
-        mnuDonahThu.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Bar chart.png")); // NOI18N
         mnuDonahThu.setText("Thống kê doanh thu");
         mnuDonahThu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,13 +359,11 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnHoTro.setText("Hỗ trợ");
 
         mnuCauHoi.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F9, 0));
-        mnuCauHoi.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\customer-service.png")); // NOI18N
         mnuCauHoi.setText("Giải đáp câu hỏi");
         mnHoTro.add(mnuCauHoi);
         mnHoTro.add(jSeparator6);
 
         mnuGioiThieu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        mnuGioiThieu.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\letter.png")); // NOI18N
         mnuGioiThieu.setText("Giới thiệu");
         mnuGioiThieu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -369,7 +373,6 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         mnHoTro.add(mnuGioiThieu);
 
         mnuHuongDan.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_0, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        mnuHuongDan.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\Globe.png")); // NOI18N
         mnuHuongDan.setText("Hướng dẫn sử dụng");
         mnHoTro.add(mnuHuongDan);
 
@@ -382,7 +385,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(statusBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(toolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
+            .addComponent(toolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -406,7 +409,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
 
     private void btnChuyenTauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChuyenTauActionPerformed
         // TODO add your handling code here:
-        openChuyenDi();
+        this.openChuyenDi();
     }//GEN-LAST:event_btnChuyenTauActionPerformed
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
@@ -479,6 +482,16 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         this.openLichTrinh();
     }//GEN-LAST:event_btnLichTrinhActionPerformed
 
+    private void btnChuyenDiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChuyenDiActionPerformed
+        // TODO add your handling code here:
+        this.openChuyenDi();
+    }//GEN-LAST:event_btnChuyenDiActionPerformed
+
+    private void mniTaoTKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniTaoTKActionPerformed
+        // TODO add your handling code here:
+        this.openTaoTK();
+    }//GEN-LAST:event_mniTaoTKActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -542,6 +555,7 @@ public class TrainSysJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem mniDangXuat;
     private javax.swing.JMenuItem mniDoiMK;
     private javax.swing.JMenuItem mniKetThuc;
+    private javax.swing.JMenuItem mniTaoTK;
     private javax.swing.JMenuItem mnuCauHoi;
     private javax.swing.JMenuItem mnuChuyenDi;
     private javax.swing.JMenuItem mnuDonahThu;
@@ -580,6 +594,10 @@ public class TrainSysJFrame extends javax.swing.JFrame {
         }).start();
     }
 
+    private void openTaoTK() {
+        new TaoTKJDialog(this, true).setVisible(true);    
+    }
+    
     void openDoiMatKhau() {
         if (Auth.isLogin()) {
             new DoiMatKhauJDialog(this, true).setVisible(true);

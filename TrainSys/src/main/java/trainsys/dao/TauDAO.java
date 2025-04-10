@@ -28,10 +28,10 @@ public class TauDAO extends TrainSysDAO<Tau, String>{
     public void update(Tau model){
         String sql="UPDATE Tau SET SoLuongToa=?, SoLuongGhe=?, TrangThai=? WHERE MaTau=?";
         XJdbc.update(sql, 
-                model.getMaTau(), 
                 model.getSoLT(), 
                 model.getSoLG(), 
-                model.getTrangThai());
+                model.getTrangThai(),
+                model.getMaTau());
     }
     
     public void delete(String MaTau){
@@ -74,4 +74,8 @@ public class TauDAO extends TrainSysDAO<Tau, String>{
         }
         return list;
     }
+//    public List<Tau> selectByChuyenDi(int maTau) {
+//        String sql="SELECT * FROM ChuyenDi WHERE MaChuyenDi=?";
+//        return this.selectBySql(sql, maTau);
+//    }
 }

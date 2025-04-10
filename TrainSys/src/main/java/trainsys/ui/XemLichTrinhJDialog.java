@@ -5,6 +5,9 @@
 package trainsys.ui;
 
 import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import trainsys.dao.ChuyenDiDAO;
 import trainsys.entity.ChuyenDi;
@@ -51,6 +54,7 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
         jLabel1.setText("Danh sách chuyến đi");
 
         cboGaDi.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        cboGaDi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HN", "HP", "LC", "DN", "NT", "SG", "QB", "QN", "VT", "BD", "BT", "LA", "TN", "CT", "HG", "TV", "AG", "GL", "DL", "PY", "VINH", "HUE" }));
 
         jLabel2.setFont(new java.awt.Font("Oswald Light", 1, 14)); // NOI18N
         jLabel2.setText("Ga đi:");
@@ -72,7 +76,7 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
         jLabel3.setText("Ga đến:");
 
         cboGaDen.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        cboGaDen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboGaDen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HN", "HP", "LC", "DN", "NT", "SG", "QB", "QN", "VT", "BD", "BT", "LA", "TN", "CT", "HG", "TV", "AG", "GL", "DL", "PY", "VINH", "HUE" }));
 
         jLabel4.setFont(new java.awt.Font("Oswald Light", 1, 14)); // NOI18N
         jLabel4.setText("Ngày đi:");
@@ -81,10 +85,20 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
 
         btnTimKiem.setFont(new java.awt.Font("Oswald", 0, 14)); // NOI18N
         btnTimKiem.setText("Tìm kiếm");
+        btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimKiemActionPerformed(evt);
+            }
+        });
 
         btnChon.setFont(new java.awt.Font("Oswald", 1, 14)); // NOI18N
         btnChon.setForeground(new java.awt.Color(0, 153, 0));
         btnChon.setText("Chọn chuyến");
+        btnChon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,6 +168,28 @@ public class XemLichTrinhJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
+        // TODO add your handling code here:
+        String gaDi = cboGaDi.getSelectedItem().toString();
+        String gaDen = cboGaDen.getSelectedItem().toString();
+        String ngayDi = txtNgayDi.getText().trim();
+
+        if (gaDi.equals(gaDen)) {
+            JOptionPane.showMessageDialog(null, "Ga đi và ga đến không được trùng nhau.");
+            return;
+        }
+
+        if (ngayDi.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập ngày đi.");
+            return;
+        }
+    }//GEN-LAST:event_btnTimKiemActionPerformed
+
+    private void btnChonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChonActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnChonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -9,7 +9,6 @@ package trainsys.entity;
  * @author Dien
  */
 public class NhanVien {
-
     private String maNV;
     private String matKhau;
     private String hoTen;

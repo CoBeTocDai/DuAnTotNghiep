@@ -9,19 +9,18 @@ package trainsys.entity;
  * @author dien
  */
 public class Tau {
-    private String maTau;
+    private String MaTau;
     private String soLT;
     private String soLG;
     private String trangThai;
 
-    public String getMaTau() {
-        return maTau;
+     public String getMaTau() {
+        return MaTau;
     }
 
-    public void setMaTau(String maTau) {
-        this.maTau = maTau;
+    public void setMaTau(String MaTau) {
+        this.MaTau = MaTau;
     }
-
     public String getSoLT() {
         return soLT;
     }

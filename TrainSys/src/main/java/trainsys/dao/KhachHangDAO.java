@@ -16,7 +16,6 @@ import trainsys.utils.XJdbc;
  * @author Tien
  */
 public class KhachHangDAO extends TrainSysDAO<KhachHang, String> {
-
     public void insert(KhachHang model){
         String sql="INSERT INTO KhachHang (MaKH, HoTen, Email, SDT) VALUES (?, ?, ?, ?)";
         XJdbc.update(sql, 

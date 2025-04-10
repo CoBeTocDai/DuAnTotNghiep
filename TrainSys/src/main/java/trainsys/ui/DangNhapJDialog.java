@@ -5,7 +5,9 @@
 package trainsys.ui;
 
 import trainsys.dao.NhanVienDAO;
+import trainsys.dao.TaoTKDAO;
 import trainsys.entity.NhanVien;
+import trainsys.entity.TaoTK;
 import trainsys.utils.Auth;
 import trainsys.utils.MsgBox;
 
@@ -34,12 +36,13 @@ public class DangNhapJDialog extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        txtMaNV = new javax.swing.JTextField();
+        txtTenDN = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtMatKhau = new javax.swing.JPasswordField();
         btnDangNhap = new javax.swing.JButton();
         btnKetThuc = new javax.swing.JButton();
         lblAnh = new javax.swing.JLabel();
+        txtTaoTK = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Đăng nhập tài khoản");
@@ -75,6 +78,15 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         lblAnh.setIcon(new javax.swing.ImageIcon("D:\\PRO230 - UDPM - Java\\CodeJava\\DuAnTotNghiep\\TrainSys\\src\\main\\java\\trainsys\\icon\\loginPage.png")); // NOI18N
         lblAnh.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtTaoTK.setFont(new java.awt.Font("Oswald Medium", 0, 14)); // NOI18N
+        txtTaoTK.setForeground(new java.awt.Color(102, 0, 153));
+        txtTaoTK.setText("Bạn chưa có tài khoản?");
+        txtTaoTK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtTaoTKMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,23 +94,29 @@ public class DangNhapJDialog extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblAnh)
-                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtMatKhau)
-                    .addComponent(txtMaNV)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(170, 170, 170))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(btnDangNhap)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnKetThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(txtMatKhau)
+                            .addComponent(txtTenDN)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addGap(170, 170, 170))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(btnDangNhap)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnKetThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel3))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(txtTaoTK)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,18 +127,17 @@ public class DangNhapJDialog extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTenDN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnKetThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTaoTK)
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnKetThuc, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -136,6 +153,10 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
         this.dangXuat();
     }//GEN-LAST:event_btnKetThucActionPerformed
+
+    private void txtTaoTKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTaoTKMouseClicked
+        this.openTaoTK();
+    }//GEN-LAST:event_txtTaoTKMouseClicked
 
     /**
      * @param args the command line arguments
@@ -188,27 +209,74 @@ public class DangNhapJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblAnh;
-    private javax.swing.JTextField txtMaNV;
     private javax.swing.JPasswordField txtMatKhau;
+    private javax.swing.JLabel txtTaoTK;
+    private javax.swing.JTextField txtTenDN;
     // End of variables declaration//GEN-END:variables
 
     private void init() {
         this.setLocationRelativeTo(null);
     }
+    
     NhanVienDAO nhanVienDAO = new NhanVienDAO();
+    TaoTKDAO tkDAO = new TaoTKDAO();
 
     private void dangNhap() {
-        String maNV = txtMaNV.getText();
+        String tenDN = txtTenDN.getText();
         String matKhau = new String(txtMatKhau.getPassword());
-        NhanVien nhanVien = nhanVienDAO.selectById(maNV);
+        
+        
+        NhanVien nhanVien = nhanVienDAO.selectById(tenDN);
         if (nhanVien == null) {
-            MsgBox.alert(this, "Sai tên đăng nhập!");
+//            MsgBox.alert(this, "Sai tên đăng nhập!");
         } else if (!matKhau.equals(nhanVien.getMatKhau())) {
             MsgBox.alert(this, "Sai mật khẩu!");
         } else {
             Auth.user = nhanVien;
+            MsgBox.alert(this, "Đăng nhập thành công với tài khoản Nhân viên/ Admin!");
             this.dispose();
         }
+
+        
+        TaoTK tk = tkDAO.selectById(tenDN);
+        if (tk == null) {
+            MsgBox.alert(this, "Sai tên đăng nhập!");
+        } else if (!matKhau.equals(tk.getMatKhau())) {
+            MsgBox.alert(this, "Sai mật khẩu!");
+        } else {
+            Auth.kh = tk;
+            MsgBox.alert(this, "Đăng nhập thành công với tài khoản Khách hàng!");
+            this.dispose();
+        }
+        
+        
+        
+
+//        NhanVienDAO nvDao = new NhanVienDAO();
+//        KhachHangDAO khDao = new KhachHangDAO();
+//
+//        String manv = txtTenDN.getText();
+//        String matKhau = new String(txtMatKhau.getPassword());
+//
+//        NhanVien nv = nvDao.selectById(manv);
+//
+//
+//        if (nv != null && matKhau.equals(nv.getMatKhau())) {
+//            Auth.user = nv;
+//            MsgBox.alert(this, "Đăng nhập thành công với tài khoản nhân viên!");
+//            this.dispose();
+//            new TrainSysJFrame().setVisible(true);
+//        } else {
+//            KhachHang kh = khDao.selectById(manv);
+//            if (kh != null && matKhau.equals(kh.getMatKhau())) {
+//                Auth.khachHang = kh;
+//                MsgBox.alert(this, "Đăng nhập thành công với tài khoản khách hàng!");
+//                this.dispose();
+//                new TrainSysJFrame().setVisible(true); // hoặc giao diện riêng nếu bạn muốn
+//            } else {
+//                MsgBox.alert(this, "Sai tên đăng nhập hoặc mật khẩu!");
+//            }
+//        }
 
     }
 
@@ -217,4 +285,10 @@ public class DangNhapJDialog extends javax.swing.JDialog {
             System.exit(0);
         }
     }
+
+    private void openTaoTK() {
+        new TaoTKJDialog(null, true).setVisible(true);
+    }
+    
+    
 }

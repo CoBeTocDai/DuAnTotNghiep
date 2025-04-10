@@ -15,16 +15,7 @@ public class Ve {
     private int soGhe;
     private String maKH; 
     
-     public Ve() {}
-
-    public Ve(String maVe, String maChuyenDi, int soToa, int soGhe, String maKH) {
-        this.maVe = maVe;
-        this.maChuyenDi = maChuyenDi;
-        this.soToa = soToa;
-        this.soGhe = soGhe;
-        this.maKH = maKH;
-    }
-
+    
     public String getMaVe() {
         return maVe;
     }
